@@ -20,10 +20,7 @@ public class Saltador extends Atleta implements Serializable{
 	
 	@Override
 	public String toString() {
-		String retorno = "";
-		retorno += "Nome: "+this.nome+"\n";
-		retorno += "Numero: "+this.numero+"\n";
-		retorno += "Atividade: "+atividade()+"\n";
+		String retorno = super.toString();
 		retorno += "Altura: "+altura+"\n";
 		retorno += "Altura do pulo: "+alturaPulo+"\n";
 		return retorno;

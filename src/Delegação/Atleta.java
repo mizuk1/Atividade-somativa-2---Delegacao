@@ -14,5 +14,11 @@ public abstract class Atleta implements Serializable{
 	
 	public abstract String atividade();
 	
-	public abstract String toString();
+	public String toString() {
+		String retorno = "";
+		retorno += "Nome: "+this.nome+"\n";
+		retorno += "Numero: "+this.numero+"\n";
+		retorno += "Atividade: "+atividade()+"\n";
+		return retorno;
+	}
 }

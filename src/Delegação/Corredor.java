@@ -20,10 +20,7 @@ public class Corredor extends Atleta implements Serializable{
 
 	@Override
 	public String toString() {
-		String retorno = "";
-		retorno += "Nome: "+this.nome+"\n";
-		retorno += "Numero: "+this.numero+"\n";
-		retorno += "Atividade: "+atividade()+"\n";
+		String retorno = super.toString();
 		retorno += "Velocidade: "+velocidade+"\n";
 		retorno += "Velocidade Maxima: "+velocidadeMaxima+"\n";
 		return retorno;

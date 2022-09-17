@@ -19,44 +19,44 @@ public class Delegacao {
 	
 	public String[] leValores(String[] dadosIn) {
 		String[] dadosOut = new String [dadosIn.length];
-        for (int i = 0; i < dadosIn.length; i++)
-           dadosOut[i] = JOptionPane.showInputDialog("Entre com "+dadosIn[i]+": ");
+		for (int i = 0; i < dadosIn.length; i++)
+        	dadosOut[i] = JOptionPane.showInputDialog("Entre com "+dadosIn[i]+": ");
         return dadosOut;
 	}
 	
 	public Saltador leSaltador() {
 		String[] valores = new String[4];
-        String[] nomeVal = {"Nome","Numero","Altura","Altura Pulo"};
-        valores = leValores(nomeVal);
+		String[] nomeVal = {"Nome","Numero","Altura","Altura Pulo"};
+		valores = leValores(nomeVal);
 
-        int numero = this.retornaInteiro(valores[1]);
-        double altura = this.retornaDouble(valores[2]);
-        double alturaPulo = this.retornaDouble(valores[3]);
-        Saltador saltador = new Saltador(valores[0],numero,altura,alturaPulo);
-        return saltador;
+		int numero = this.retornaInteiro(valores[1]);
+		double altura = this.retornaDouble(valores[2]);
+		double alturaPulo = this.retornaDouble(valores[3]);
+		Saltador saltador = new Saltador(valores[0],numero,altura,alturaPulo);
+		return saltador;
 	}
 	
 	public Corredor leCorredor() {
 		String[] valores = new String[4];
-        String[] nomeVal = {"Nome","Numero","Velocidade","Velocidade Maxima"};
-        valores = leValores(nomeVal);
+		String[] nomeVal = {"Nome","Numero","Velocidade","Velocidade Maxima"};
+		valores = leValores(nomeVal);
 
-        int numero = this.retornaInteiro(valores[1]);
-        double velocidade = this.retornaDouble(valores[2]);
-        double velocidadeMaxima = this.retornaDouble(valores[3]);
-        Corredor corredor = new Corredor(valores[0],numero,velocidade,velocidadeMaxima);
-        return corredor;
+		int numero = this.retornaInteiro(valores[1]);
+		double velocidade = this.retornaDouble(valores[2]);
+		double velocidadeMaxima = this.retornaDouble(valores[3]);
+		Corredor corredor = new Corredor(valores[0],numero,velocidade,velocidadeMaxima);
+		return corredor;
 	}
 	
 	public Nadador leNadador() {
 		String[] valores = new String[4];
-        String[] nomeVal = {"Nome","Numero","Estilo","Velocidade Maxima"};
-        valores = leValores(nomeVal);
-
-        int numero = this.retornaInteiro(valores[1]);
-        double velocidadeMaxima = this.retornaDouble(valores[3]);
-        Nadador nadador = new Nadador(valores[0],numero,valores[2],velocidadeMaxima);
-        return nadador;
+	String[] nomeVal = {"Nome","Numero","Estilo","Velocidade Maxima"};
+	valores = leValores(nomeVal);
+	
+	int numero = this.retornaInteiro(valores[1]);
+	double velocidadeMaxima = this.retornaDouble(valores[3]);
+	Nadador nadador = new Nadador(valores[0],numero,valores[2],velocidadeMaxima);
+	return nadador;
 	}
 	
 	private boolean intValido(String s) {
@@ -228,6 +228,6 @@ public class Delegacao {
 	
 	public static void main(String[] args) { // Main
 		Delegacao delegacao = new Delegacao();
-        delegacao.menuDelegacao();
+		delegacao.menuDelegacao();
 	}
 }

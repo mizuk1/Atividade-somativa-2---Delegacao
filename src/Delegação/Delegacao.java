@@ -50,13 +50,13 @@ public class Delegacao {
 	
 	public Nadador leNadador() {
 		String[] valores = new String[4];
-	String[] nomeVal = {"Nome","Numero","Estilo","Velocidade Maxima"};
-	valores = leValores(nomeVal);
-	
-	int numero = this.retornaInteiro(valores[1]);
-	double velocidadeMaxima = this.retornaDouble(valores[3]);
-	Nadador nadador = new Nadador(valores[0],numero,valores[2],velocidadeMaxima);
-	return nadador;
+		String[] nomeVal = {"Nome","Numero","Estilo","Velocidade Maxima"};
+		valores = leValores(nomeVal);
+		
+		int numero = this.retornaInteiro(valores[1]);
+		double velocidadeMaxima = this.retornaDouble(valores[3]);
+		Nadador nadador = new Nadador(valores[0],numero,valores[2],velocidadeMaxima);
+		return nadador;
 	}
 	
 	private boolean intValido(String s) {

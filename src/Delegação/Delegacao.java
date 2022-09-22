@@ -17,14 +17,14 @@ public class Delegacao {
 		this.atletas = new ArrayList<Atleta>();
 	}
 	
-	public String[] leValores(String[] dadosIn) {
+	public String[] leValores(String[] dadosIn) { // Recebe os dados do usuario
 		String[] dadosOut = new String [dadosIn.length];
 		for (int i = 0; i < dadosIn.length; i++)
-        	dadosOut[i] = JOptionPane.showInputDialog("Entre com "+dadosIn[i]+": ");
+        	dadosOut[i] = JOptionPane.showInputDialog("Entre com "+dadosIn[i]+": "); // atribui os novos dados de dadosIn[i]
         return dadosOut;
 	}
 	
-	public Saltador leSaltador() {
+	public Saltador leSaltador() { // Método que retorna um objeto com dados de Saltador
 		String[] valores = new String[4];
 		String[] nomeVal = {"Nome","Numero","Altura","Altura Pulo"};
 		valores = leValores(nomeVal);
@@ -36,7 +36,7 @@ public class Delegacao {
 		return saltador;
 	}
 	
-	public Corredor leCorredor() {
+	public Corredor leCorredor() { // Método que retorna um objeto com dados de Corredor
 		String[] valores = new String[4];
 		String[] nomeVal = {"Nome","Numero","Velocidade","Velocidade Maxima"};
 		valores = leValores(nomeVal);
@@ -48,7 +48,7 @@ public class Delegacao {
 		return corredor;
 	}
 	
-	public Nadador leNadador() {
+	public Nadador leNadador() { // Método que retorna um objeto com dados de Nadador
 		String[] valores = new String[4];
 		String[] nomeVal = {"Nome","Numero","Estilo","Velocidade Maxima"};
 		valores = leValores(nomeVal);
@@ -59,7 +59,7 @@ public class Delegacao {
 		return nadador;
 	}
 	
-	private boolean intValido(String s) {
+	private boolean intValido(String s) { // Verifica se o número é inteiro e retorna um boolean
 		try {
 			Integer.parseInt(s);
 			return true;
@@ -68,14 +68,14 @@ public class Delegacao {
 		}
 	}
 	
-	public int retornaInteiro(String entrada) {
-		while(!this.intValido(entrada)) {
+	public int retornaInteiro(String entrada) { // Método que retorna um número inteiro inserido pelo usuário
+		while(!this.intValido(entrada)) { // Enquanto retorna False pede um número inteiro
 			entrada = JOptionPane.showInputDialog(null,"Valor invalido\nDigite um numero inteiro: ");
 		}
 		return Integer.parseInt(entrada);
 	}
 	
-	private boolean doubleValido(String s) {
+	private boolean doubleValido(String s) { // Verifica se o número é double e retorna um boolean
 		try {
 			Double.parseDouble(s);
 			return true;
@@ -84,14 +84,14 @@ public class Delegacao {
 		}
 	}
 	
-	public double retornaDouble(String entrada) {
-		while(!this.doubleValido(entrada)) {
+	public double retornaDouble(String entrada) { // Método que retorna um número double inserido pelo usuário
+		while(!this.doubleValido(entrada)) { // Enquanto retorna False pede um número double
 			entrada = JOptionPane.showInputDialog(null,"Valor invalido\nDigite um numero valido: ");
 		}
 		return Double.parseDouble(entrada);
 	}
 	
-	public void salvaAtletas(ArrayList<Atleta> atletas) {
+	public void salvaAtletas(ArrayList<Atleta> atletas) { // Salva os objetos da lista de atletas no arquivo de dados
 		ObjectOutputStream outputStream = null;
 		try {
 			outputStream = new ObjectOutputStream(new FileOutputStream("delegacaoAtividadeSomativa.dados"));
@@ -115,7 +115,7 @@ public class Delegacao {
 		}
 	}
 	
-	public ArrayList<Atleta> recuperaAtletas(){
+	public ArrayList<Atleta> recuperaAtletas(){ // recupera os dados dos objetos do arquivo de dados
 		ArrayList<Atleta> atletasTemp = new ArrayList<Atleta>();
 		ObjectInputStream inputStream = null;
 
@@ -148,24 +148,24 @@ public class Delegacao {
 		return atletasTemp;
 	}
 	
-	public void menuDelegacao() {
+	public void menuDelegacao() { // menu
 		String menu = "";
 		String entrada;
 		int opc1, opc2;
 		do {
 			menu = "Controle Delegacao\n"+
 					"Opções:\n"+ 
-					"1. Entrar Atleta\n"+
-					"2. Exibir Atletas\n"+
-					"3. Limpar Atletas\n"+
-					"4. Gravar Atletas\n"+
-					"5. Recuperar Atletas\n"+
+					"1. Entrar Atleta\n"+ // Entrar dados
+					"2. Exibir Atletas\n"+ // Exibir dados
+					"3. Limpar Atletas\n"+ // Limpar dados
+					"4. Gravar Atletas\n"+ // Gravar dados
+					"5. Recuperar Atletas\n"+ // Recuperar dados
 					"9. Sair";
 			entrada = JOptionPane.showInputDialog (null,menu+"\n\n");
 			opc1 = this.retornaInteiro(entrada);
 
 			switch (opc1) {
-			case 1:// Entrar dados
+			case 1: // Entrar dados
 				menu = "Entrada de Atletas\n"+
 						"Opções:\n"+ 
 						"1. Saltador\n"+
@@ -195,7 +195,7 @@ public class Delegacao {
 				}
 				JOptionPane.showMessageDialog(null,dados);
 				break;
-			case 3: // Limpar Dados
+			case 3: // Limpar dados
 				if (atletas.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Entre com atletas ...");
 					break;
@@ -203,7 +203,7 @@ public class Delegacao {
 				atletas.clear();
 				JOptionPane.showMessageDialog(null, "Dados LIMPOS com sucesso!");
 				break;
-			case 4: // Grava Dados
+			case 4: // Gravar dados
 				if (atletas.size() == 0) {
 					JOptionPane.showMessageDialog(null, "Entre com atletas ... ");
 					break;
@@ -211,7 +211,7 @@ public class Delegacao {
 				salvaAtletas(atletas);
 				JOptionPane.showMessageDialog(null, "Dados SALVOS com sucesso!");
 				break;
-			case 5: // Recupera Dados
+			case 5: // Recuperar dados
 				atletas = recuperaAtletas();
 				if (atletas.size() == 0) {
 					JOptionPane.showMessageDialog(null,"Sem dados para apresentar.");
@@ -219,7 +219,7 @@ public class Delegacao {
 				}
 				JOptionPane.showMessageDialog(null,"Dados RECUPERADOS com sucesso!");
 				break;
-			case 9:
+			case 9: // Sair
 				JOptionPane.showMessageDialog(null, "Fim do aplicativo DELEGACAO");
 				break;
 			}

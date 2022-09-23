@@ -6,7 +6,13 @@ public class Nadador extends Atleta implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private String estilo;
 	private double velocidadeMaxima;
-
+	
+	public Nadador(String nome, int numero, String estilo, double velocidadeMaxima) {
+		super(nome, numero);
+		this.estilo = estilo;
+		this.velocidadeMaxima = velocidadeMaxima;
+	}
+	
 	// Getters e setters possíveis, porém não utilizados no programa
 	public String getEstilo() {
 		return estilo;
@@ -21,12 +27,6 @@ public class Nadador extends Atleta implements Serializable{
 	}
 
 	public void setVelocidadeMaxima(double velocidadeMaxima) {
-		this.velocidadeMaxima = velocidadeMaxima;
-	}
-
-	public Nadador(String nome, int numero, String estilo, double velocidadeMaxima) {
-		super(nome, numero);
-		this.estilo = estilo;
 		this.velocidadeMaxima = velocidadeMaxima;
 	}
 

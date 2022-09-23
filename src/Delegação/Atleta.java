@@ -7,6 +7,11 @@ public abstract class Atleta implements Serializable{
 	String nome;
 	int numero;
 	
+	public Atleta(String nome, int numero) {
+		this.nome = nome;
+		this.numero = numero;
+	}
+	
 	// Getters e setters possíveis, porém não utilizados no programa
 	public String getNome() {
 		return nome;
@@ -21,11 +26,6 @@ public abstract class Atleta implements Serializable{
 	}
 
 	public void setNumero(int numero) {
-		this.numero = numero;
-	}
-	
-	public Atleta(String nome, int numero) {
-		this.nome = nome;
 		this.numero = numero;
 	}
 	

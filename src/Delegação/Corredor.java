@@ -7,6 +7,12 @@ public class Corredor extends Atleta implements Serializable{
 	private double velocidade;
 	private double velocidadeMaxima;
 	
+	public Corredor(String nome, int numero, double velocidade, double velocidadeMaxima) {
+		super(nome, numero);
+		this.velocidade = velocidade;
+		this.velocidadeMaxima = velocidadeMaxima;
+	}
+	
 	// Getters e setters possíveis, porém não utilizados no programa
 	public double getVelocidade() {
 		return velocidade;
@@ -21,12 +27,6 @@ public class Corredor extends Atleta implements Serializable{
 	}
 
 	public void setVelocidadeMaxima(double velocidadeMaxima) {
-		this.velocidadeMaxima = velocidadeMaxima;
-	}
-
-	public Corredor(String nome, int numero, double velocidade, double velocidadeMaxima) {
-		super(nome, numero);
-		this.velocidade = velocidade;
 		this.velocidadeMaxima = velocidadeMaxima;
 	}
 

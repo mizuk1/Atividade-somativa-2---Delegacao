@@ -6,6 +6,12 @@ public class Saltador extends Atleta implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private double altura;
 	private double alturaPulo;
+	
+	public Saltador(String nome, int numero, double altura, double alturaPulo) {
+		super(nome, numero);
+		this.altura = altura;
+		this.alturaPulo = alturaPulo;
+	}
 
 	// Getters e setters possíveis, porém não utilizados no programa
 	public double getAltura() {
@@ -21,12 +27,6 @@ public class Saltador extends Atleta implements Serializable{
 	}
 
 	public void setAlturaPulo(double alturaPulo) {
-		this.alturaPulo = alturaPulo;
-	}
-
-	public Saltador(String nome, int numero, double altura, double alturaPulo) {
-		super(nome, numero);
-		this.altura = altura;
 		this.alturaPulo = alturaPulo;
 	}
 	

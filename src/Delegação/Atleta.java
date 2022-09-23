@@ -4,8 +4,8 @@ import java.io.Serializable;
 
 public abstract class Atleta implements Serializable{
 	private static final long serialVersionUID = 1L;
-	String nome;
-	int numero;
+	private String nome;
+	private int numero;
 	
 	public Atleta(String nome, int numero) {
 		this.nome = nome;

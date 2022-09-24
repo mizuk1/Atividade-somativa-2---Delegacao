@@ -94,7 +94,7 @@ public class Delegacao {
 	public void salvaAtletas(ArrayList<Atleta> atletas) { // Salva os objetos da lista de atletas no arquivo de dados
 		ObjectOutputStream outputStream = null;
 		try {
-			outputStream = new ObjectOutputStream(new FileOutputStream("delegacaoAtividadeSomativa.dados"));
+			outputStream = new ObjectOutputStream(new FileOutputStream("delegacao.dados"));
 			for(int i=0; i<atletas.size(); i++) {
 				outputStream.writeObject(atletas.get(i));
 			}
@@ -120,7 +120,7 @@ public class Delegacao {
 		ObjectInputStream inputStream = null;
 
 		try {    
-			inputStream = new ObjectInputStream(new FileInputStream("delegacaoAtividadeSomativa.dados"));
+			inputStream = new ObjectInputStream(new FileInputStream("delegacao.dados"));
 			Object obj = null;
 			while ((obj = inputStream.readObject()) != null) {
 				if (obj instanceof Atleta) {

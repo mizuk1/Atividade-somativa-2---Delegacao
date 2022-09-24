@@ -21,7 +21,7 @@ public class Delegacao {
 		String[] dadosOut = new String [dadosIn.length];
 		for (int i = 0; i < dadosIn.length; i++)
         	dadosOut[i] = JOptionPane.showInputDialog("Entre com "+dadosIn[i]+": "); // atribui os novos dados de dadosIn[i]
-        return dadosOut;
+		return dadosOut;
 	}
 	
 	public Saltador leSaltador() { // Método que retorna um objeto com dados de Saltador
@@ -180,8 +180,7 @@ public class Delegacao {
 					break;
 					case 3: atletas.add((Atleta)leNadador());
 					break;
-					default:
-						JOptionPane.showMessageDialog(null, "Entrada NÃO válida!");
+					default: JOptionPane.showMessageDialog(null, "Entrada NÃO válida!");
 				}
 				break;
 			case 2: // Exibir dados
